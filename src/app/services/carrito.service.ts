@@ -36,5 +36,16 @@ export class CarritoService {
   }
   public listarAutosCarrito(){
     return this.cliente.get(`${this.URL_API}`);
+
+  }
+  public buscarPorIDCarrito(id: number): Observable<AutomovilID | null>{
+    return this.cliente.get<AutomovilID | null>(`${this.URL_API}/${id}`)
+  }
+  public modificarPorIDCarrito(id: number, payload: AutomovilPartial): Observable<any>{
+    return this.cliente.patch(`${this.URL_API}/${id}`,payload,{
+      headers: {
+        'Content-Type':'application/json; charset=utf-8'
+      }
+    });
   }
 }

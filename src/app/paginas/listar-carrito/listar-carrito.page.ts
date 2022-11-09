@@ -37,7 +37,8 @@ export class ListarCarritoPage implements OnInit {
 
   handleRefresh(event) {
     setTimeout(() => {
-      this.carritoService.listarAutosCarrito()
+      this.carritoService.listarAutosCarrito().subscribe(resultado=>{
+        this.cart = resultado;});
       event.target.complete();
     }, 2000);
   };

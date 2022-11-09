@@ -42,6 +42,10 @@ const routes: Routes = [
   {
     path: 'iniciar-sesion',
     loadChildren: () => import('./paginas/iniciar-sesion/iniciar-sesion.module').then( m => m.IniciarSesionPageModule)
+  },
+  {
+    path: 'modificar-carrito/:idAuto',
+    loadChildren: () => import('./paginas/modificar-carrito/modificar-carrito.module').then( m => m.ModificarCarritoPageModule)
   }
 ];
 

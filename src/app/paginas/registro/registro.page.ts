@@ -20,8 +20,8 @@ export class RegistroPage implements OnInit {
 
   public construirFormulario(): void {
     this.formularioR = this.fb.group({
-    correo:['',[Validators.required, Validators.minLength(1), Validators.maxLength(10)]],
-    contraseña: ['',[Validators.required, Validators.minLength(1), Validators.maxLength(10)]],
+    correo:['',[Validators.required, Validators.minLength(4), Validators.maxLength(15)]],
+    contraseña: ['',[Validators.required, Validators.minLength(4), Validators.maxLength(15)]],
     tipoUsuario:['normal',]
     })
   }

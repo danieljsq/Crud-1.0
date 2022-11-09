@@ -30,13 +30,11 @@
       <ion-grid>
         <ion-row class="ion-justify-content-between">
           <ion-col size="6">
-            <ion-button [routerLink]="['/modificar',a.id]" color="secondary" size="small" >
-              <ion-icon name="pencil-outline"></ion-icon>
+            <ion-button [routerLink]="['/modificar',a.id]" color="success">Modificar
             </ion-button>
           </ion-col>
           <ion-col size="6" class="ion-align-self-end" style="text-align: end;">
-            <ion-button [routerLink]="['/eliminar',a.id]" color="danger" size="small" >
-              <ion-icon name="trash-outline"></ion-icon>
+            <ion-button [routerLink]="['/eliminar',a.id]" color="danger">Eliminar
             </ion-button>
           </ion-col>
         </ion-row>

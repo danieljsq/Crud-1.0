@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cantidad</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form novalidate [formGroup]="formulario" (ngSubmit)="modificarAutoCarrito()">
+    <ion-item>
+      <ion-label position="floating">Cantidad</ion-label>
+      <ion-input
+        formControlName="cantidad"
+      type="number"></ion-input>
+      <ion-note
+        slot="error"
+        *ngIf="obtenerCampo('cantidad').invalid && obtenerCampo('cantidad').errors && obtenerCampo('cantidad').errors.required && fueTocado('cantidad')
+        "
+        > Este campo es requerido</ion-note>
+      <ion-note
+        slot="error"
+        *ngIf="obtenerCampo('cantidad').invalid && obtenerCampo('cantidad').errors && obtenerCampo('cantidad').errors.max && fueTocado('cantidad')
+        "
+        > El valor maximo es 10</ion-note>
+      <ion-note
+        slot="error"
+        *ngIf="obtenerCampo('cantidad').invalid && obtenerCampo('cantidad').errors && obtenerCampo('cantidad').errors.min && fueTocado('cantidad')
+        "
+        > El valor minimo es 1</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-button
+        type="submit"
+        [disabled]="formulario.invalid && !cargaArchivo"
+        >
+        Guardar
+      </ion-button>
+      <ion-button  [routerLink]="['/listar-carrito']">volver</ion-button>
+    </ion-item>
+  </form>
+</ion-content>

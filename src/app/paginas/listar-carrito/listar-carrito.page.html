@@ -15,6 +15,9 @@
   <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
   <ion-card *ngFor="let a of cart ">
     <img [src]="a.foto" />
     <ion-card-header>
@@ -32,9 +35,10 @@
       <br>
       <ion-grid>
         <ion-row>
-          <ion-col></ion-col>
           <ion-col><ion-button (click)="eliminarAutos(a.id)" color="danger" >Eliminar</ion-button></ion-col>
           <ion-col></ion-col>
+          <ion-col><ion-button [routerLink]="['/modificar-carrito',a.id]" color="success">Modificar Cantidad
+          </ion-button></ion-col>
         </ion-row>
       </ion-grid>
     </ion-card-header>
